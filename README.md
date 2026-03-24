@@ -278,7 +278,7 @@ curl http://127.0.0.1:8000/health
 
 
 ## Linuxdo
-- 欢迎大家加入 https://linux.do/ 各种技术交流，学AI上Linuxdo
+- 欢迎大家加入 https://linux.do/ 讨论各种技术，学AI上Linuxdo
 ## License
 
 MIT
