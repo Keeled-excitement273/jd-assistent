@@ -11,6 +11,22 @@
 - 支持 **Word 导出**，并在项目文档中规划了 PDF / 渲染链路
 - 支持 **多主题前端界面**，适合不同查看场景
 
+## 界面预览
+
+> 以下图片来自项目根目录 `image/`。
+
+### 预览图 1
+
+![JD Assistent 预览图 1](./image/5f24028e-06df-4d2a-a8bd-cf688a0bccd7.png)
+
+### 预览图 2
+
+![JD Assistent 预览图 2](./image/98b49b98dc52cfaf7c9c7e0857ac039b.png)
+
+### 预览图 3
+
+![JD Assistent 预览图 3](./image/b33b3f4c2570aaa654295a85f34c4c5a.png)
+
 ## 适用场景
 
 - 针对特定 JD 快速重写简历内容
@@ -256,6 +272,10 @@ curl http://127.0.0.1:8000/health
 - `docs/开发文档.md`：系统整体设计与开发文档
 - `docs/重构计划.md`：SaaS 化演进路线
 - `frontend/README.md`：前端模块说明
+
+## Todo
+
+- [ ] 模型面试
 
 ## License
 
