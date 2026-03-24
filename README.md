@@ -276,6 +276,9 @@ curl http://127.0.0.1:8000/health
 
 - [ ] 模型面试
 
+
+## Linuxdo
+- 欢迎大家加入 https://linux.do/ 各种技术交流，学AI上Linuxdo
 ## License
 
 MIT
